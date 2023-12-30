@@ -71,6 +71,18 @@ input {
     box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
 }
 
+.register-form {
+  width: 500px;
+  height: 500px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
+  padding: 50px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
+}
+
 .login-form h2 {
     margin-bottom: 20px;
 }
@@ -83,13 +95,26 @@ form div input {
     width: 100%;
 }
 
+form div input:focus {
+  border-bottom: 2px solid #e1dfdd;
+}
+
 .login-form .login-password, .login-form .register-button {
     margin-bottom: 20px;
 }
 
 .login-form button {
-    background-color: #cac7c7;
+    background-color: #e1dfdd;
     padding: 10px;
     border-radius: 4px;
     height: max-content;
+    transition: all 0.2s ease;
+}
+
+.login-form button:hover {
+  background-color: #cac7c7;
+}
+
+.login-form button:active {
+  opacity: 0.8;
 }
