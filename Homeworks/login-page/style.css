@@ -1,0 +1,95 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Montserrat', sans-serif;
+}
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+input, button, textarea, select {
+  font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+#root, #__next {
+  isolation: isolate;
+}
+
+button {
+    background: none;
+    height: 100%;
+    border: none;
+    box-shadow: none;
+    cursor: pointer
+}
+
+textarea:focus,input:focus {
+    outline: none
+}
+
+ul {
+    list-style: none;
+    padding: 0
+}
+
+a {
+    text-decoration: none;
+    color: inherit
+}
+
+input {
+    border: none;
+    outline: none
+}
+
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(90deg,rgba(64,2,9,.5916473317865429) 0%,rgba(41,41,108,.5452436194895591) 51%,rgba(0,255,221,.4895591647331786) 100%);
+}
+
+.login-form {
+    width: 500px;
+    height: 400px;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff;
+    padding: 50px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
+}
+
+.login-form h2 {
+    margin-bottom: 20px;
+}
+
+form div input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    border-bottom: 1px solid #e1dfdd;
+    width: 100%;
+}
+
+.login-form .login-password, .login-form .register-button {
+    margin-bottom: 20px;
+}
+
+.login-form button {
+    background-color: #cac7c7;
+    padding: 10px;
+    border-radius: 4px;
+    height: max-content;
+}
