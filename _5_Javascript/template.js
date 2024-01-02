@@ -463,3 +463,197 @@ const promiseFunction = () => {
     console.log(pro);
 }
 promiseFunction()
+
+
+// Diziler
+let arrayFunction = () => {
+    let array = [4,1,5,2,9,7,3,6];
+    console.log(array);
+    console.log('Eleman sayısı: '+ array.length);
+    console.log(array[0]);
+    console.log(array[7]);
+    console.log(array[7-1]);
+    array[8] = 44; // 8.indise eleman atadım.
+    console.log(array);
+    console.log(array[array.length - 1]);
+};
+
+let arrayFunction2 = () => { 
+    let array = [4,1,2,9,7,3,6];
+    return array;
+};
+arrayFunction2();
+
+let arrayFunction3 = () => { 
+    let array = arrayFunction2();
+    // let cloneArray=array;
+    // console.log(cloneArray);
+
+    // For
+    for (let i=0; i<array.length; i++) {
+        //console.log(array[i]);
+        document.writeln(array[i]);
+    }
+    
+    // For .. IN
+    document.writeln('<br/>************<br/>');
+    array.push(23);
+    for (let data in array) {
+        //document.writeln(data);
+        document.writeln(data + "=> " + array[data] + "<br/>"); 
+    }
+
+    // For .. OF
+    document.writeln('<br/>************<br/>');
+    array.unshift(50);
+    //array.unshift(50,99);
+    for (let data of array) {
+        document.writeln(data);
+    }
+
+    // FOREACH
+    document.writeln("<br/>*******************************<br/>");
+    //  forEach(callbackfn: (value: T, index: number, array: T[]) => void, thisArg?: any): void;
+    array.pop();
+    array.forEach((value, index, array) => {
+        //document.writeln(value + "=> " + index + "=> " + array + "<br/>");
+        document.writeln(`${value} `);
+    });
+
+
+    // FOREACH
+    document.writeln("<br/>*******************************<br/>");
+    //  forEach(callbackfn: (value: T, index: number, array: T[]) => void, thisArg?: any): void;
+    array.shift();
+    array.forEach((value, index, array) => {
+        //document.writeln(value + "=> " + index + "=> " + array + "<br/>");
+        document.writeln(`${value} `);
+    });
+
+    //// SORT
+    document.writeln("<br/>*******************************<br/>");
+    array.sort().forEach(value => {
+        document.writeln(`${value} `);
+    });
+
+    //// REVERSE
+    document.writeln("<br/>*******************************<br/>");
+    array.reverse().forEach(value => {
+        document.writeln(`${value} `);
+    });
+
+    // document.writeln("<br/>*******************************<br/>");
+    // array.sort().reverse().forEach(value => {
+    //     document.writeln(`${value} `);
+    // });
+};
+arrayFunction3();
+
+// Delete
+let arrayFunction4 = () => {
+    let array = arrayFunction2();
+    console.log(array);
+
+    // belirtilen indisteki elemanı siler yerine undefined ekler
+    delete array[0];
+    console.log(array);
+}
+//arrayFunction4();
+
+// String
+let arrayFunction5 = () => {
+    let array = arrayFunction2();
+    console.log(array);
+
+    // toString() => Diziyi String'e çevirmek için kullanıyoruz
+    let arrayToString = array.toString();
+    console.log(arrayToString);
+    console.log(arrayToString.substring(0, 4));
+
+    // join() => Diziyi String'e çevirmek için kullanılır.
+    let arrayData=array.join(" ");
+    console.log(arrayData);
+    
+    // Join
+
+}
+// arrayFunction5();
+
+// slice, splice
+// Diziyi String'e çevirmek
+let arrayFunction6 = () => {
+    let array = arrayFunction2();
+    console.log(array);
+
+    // Slice
+    let sliceArray=array.slice(2);
+    console.log(sliceArray);
+
+    let sliceArray2=array.slice(0,2);
+    console.log(sliceArray2);
+}
+//arrayFunction6();
+
+// slice (Original Array'i bozmaz)
+// splice (Original Array'i bozar)
+// Diziyi String'e çevirmek
+let arrayFunction7 = () => {
+    let array = arrayFunction2();
+    console.log(array);
+
+    // Splice
+    // array.splice(0,2);
+    // console.log(array);
+
+    // array.splice(2,3);
+    // console.log(array);
+
+    // 0: başlama indisi
+    // 2: çıkarma 
+    // array.splice(0,3);
+    // console.log(array);
+    
+    // 2: Başlama indisi
+    // 0: Ekleme
+    // 2,3: eklenecek sayılar
+     array.splice(2,0,2,3);
+     console.log(array);
+}
+// arrayFunction7();
+
+
+// Filter, map
+let arrayFunction8 = () => {
+    let array = arrayFunction2();
+    array.sort()
+    console.log(array);
+
+    //  filter<S extends T>(predicate: (value: T, index: number, array: T[]) => value is S, thisArg?: any): S[];
+    // array.filter((response) => { 
+    //     return response>=5;
+    // }).forEach(value => {
+    //     console.log(`${value} `);
+    // });
+
+    //  filter<S extends T>(predicate: (value: T, index: number, array: T[]) => value is S, thisArg?: any): S[];
+    //    let mapResult= array.map((response) => {
+    //         return response = response * 2;
+    //     });
+    //     console.log(mapResult);
+
+    //     mapResult.forEach(value => {
+    //         console.log(`${value} `);
+    //     });
+
+    // Her bir değişkendeki sadece çift olan sayıları alın (filter)
+    // sonrasında bu sayılara 5 ekleyin (map)
+    // sonrasında bu sayıları ekranda gösterin (forEach)
+    array.filter((response) => {
+        return response % 2 == 0;
+    }).map((response) => {
+        return response += 5;
+    }).forEach(value => {
+        console.log(`${value} `);
+    });
+}
+arrayFunction8();
