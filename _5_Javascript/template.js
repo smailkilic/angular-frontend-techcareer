@@ -656,4 +656,51 @@ let arrayFunction8 = () => {
         console.log(`${value} `);
     });
 }
-arrayFunction8();
+// arrayFunction8();
+
+
+// LocalStorage
+let localStorageData = () => {
+    // SET
+    localStorage.setItem("username", "Hamit");
+    localStorage.setItem("surname", "Mızrak");
+    
+    // GET
+    let result = localStorage.getItem("username", "Hamit");
+    console.log(result);
+
+    // Remove Item
+    localStorage.removeItem("username");
+
+    // Clear
+    localStorage.clear()
+}
+// localStorageData();
+
+
+// Object
+let objectData = () => {
+    let person = {
+        name: "Hamit",
+        surname: "Mızrak",
+        isLogin: true,
+        isCreated: 2024,
+        array: [4, 1, 5, 2, 9, 7, 3, 6],
+        language: {
+            name: "Java SE",
+            age: 20,
+        },
+        result:function(){
+            console.log("Function called");
+            // return surname+" "+this.isLogin;
+        }
+    }
+    console.log(person);
+    console.log(person.name);
+    console.log(person["name"]);
+    console.log(person.language.name);
+    console.log(person.language["name"]);
+    person.result();
+}
+
+objectData();
