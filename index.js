@@ -5,23 +5,23 @@
 // ES5
 "use strict";
 
-// "use strict";
-// String Access 
-// multiline
-// Date.now();
-// trim();
-// JSON.stringfy()
-// JSON.parse()
-// ForEach()
-// Map()
-// Filter
-// Reduce()
-// ReduceRight()
-// indexOf()
-// lastIndexOf()
-// every()
-// some()
-// getter and setter
+// "use strict"; => Katı mod 
+// String Access  => charAt yerine kullanıyoruz
+// multiline  => readebility için
+// Date.now(); => şimdiki zamanı milisaniye cinsinden göstermek için
+// trim(); => başında veya sonunda boşluklardan arındırmak için
+// JSON.stringfy()  => Objeyi String'e çevirmek
+// JSON.parse() => String yapıyı JSON çevirmek için
+// ForEach() => void döndürür her bir elemana erişir.
+// Map() => Dizi döndürür her bir elemana erişir
+// Filter => dizide isteiğimiz sonuçları listelemek için
+// Reduce()  => dizide genel bir işlem yapsın tek bir sonuç için (Soldan sağa doğru)
+// ReduceRight() => dizide genel bir işlem yapsın tek bir sonuç için (sağdan sola doğru)
+// indexOf() => Dizidee solda arama yapsın bulduğunda index numarası döndersin yoksa -1
+// lastIndexOf() => Dizidee sağdan sola arama yapsın bulduğunda index numarası döndersin yoksa -1
+// every() => Dizide bizim belirlediğimiz şarta göre hepsi sağlıyor mu (:boolean)
+// some() => Dizide bizim belirlediğimiz sadece 1 tek şarta göre hepsi sağlıyor mu (:boolean)
+// getter and setter => OOP getter and setter için kullanıyoruz.
 
 // VOCABULARY
 let str = () => {
@@ -231,16 +231,21 @@ const setterFunction = () => {
 ///////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////
 // ES6
-// let, const 
-// arrow Function 
-// for of 
-// The Operator (Spread Operator)
-// Function Rest Parameter 
-// Class 
-// startsWith() endsWith()
+// let, const  => Data Types
+// arrow Function  => normal Function > Anonymous Function> Arrow Function 
+// for of  => Dizide Döngü
+// The Operator (Spread Operator) => Dizi veya object verileri almak için 
+// Function Rest Parameter  => istediğmiiz kadar argüman vermek için 
+// Include => Search (: boolean) içinde böyle bir kelime var mı ?
+// startsWith() endsWith() => ile mi başlıyor , ile mi bitiyor 
+// Default Parameters => Eğer kullanıcı veri girmezse default değer gelsin
+// Class ==> OOP kullanıdğımız Class'ı anlamak için
+// Map, Set (Data Structures) => Javada Collection karşılıktır.
+// Promise
 
 
-// let, const 
+
+// 1- ES6 (2015) let, const 
 const letConstVarFunction = () => {
 
     // Global Scope
@@ -263,8 +268,8 @@ const letConstVarFunction = () => {
 }
 //letConstVarFunction();
 
-// arrow Function
-// for of
+// 2- ES6 (2015) arrow Function
+// 3- ES6 (2015) for of
 let arrowForOf = () => {
     for (let temp of array()) {
         console.log(temp);
@@ -272,7 +277,7 @@ let arrowForOf = () => {
 }
 //arrowForOf()
 
-// The Operator (Spread Operator)
+// 4- ES6 (2015) The Operator (Spread Operator)
 let spreadOpetorFunction = () => {
     let data = array();
     console.log(data);
@@ -285,24 +290,80 @@ let spreadOpetorFunction = () => {
 }
 //spreadOpetorFunction()
 
-// Function Rest Parameter
+// 5- ES6 (2015) Function Rest Parameter
 const restParameterFunction = () => {
     function showing(...data) {
         for (let temp of data) {
             console.log(temp);
         }
     }
-    showing(1,2,3,4,5)
+    //showing(1,2,3,4,5);
+    //showing(array());
+    showing(...array());
 }
-restParameterFunction();
+//restParameterFunction();
 
+// 6- ES6 (2015)includes()
+const includeFunction = () => {
+    const text = str();
+    console.log(text);
+    //console.log(text.includes("ecmascript"));
+    let search = "ecmascript";
+    let result = (text.includes(search)) ? `${search} bulundu` : `${search} yoktur`;
+    console.log(result);
+}
+//includeFunction();
 
-// Class
-// startsWith() endsWith()
+//7- ES6 (2015) startsWith() endsWith()
+const startsEndsFunction = () => {
+    const text = str();
+    console.log(text);
+    console.log(text.startsWith("ecmascript"));
+    console.log(text.endsWith(" "));
+}
+//startsEndsFunction();
 
+// 8- ES6 (2015) Default Parameters
+const defaultParameterFunction = () => {
+    function hello(data = "Neden merhaba demedin") {
+        console.log("Merhabalar: " + data);
+    }
+    hello();
+}
+//defaultParameterFunction();
+
+// 9- ES6 (2015) Class
+const classFunction = () => {
+
+    // CLASS
+    class Computer {
+        // Constructor (Parametreli)
+        constructor(computerName, mainCard) {
+            this.computerName = computerName;
+            this.mainCard = mainCard;
+        }
+
+        // Method
+        computerProperties() {
+            console.log("Name: " + this.computerName + " Card: " + this.mainCard);
+        }
+    } // end Class
+
+    // Instance
+    let data1 = new Computer("Msi", "main card");
+    data1.computerProperties();
+
+    let data2 = new Computer("Asus", "main card");
+    data2.computerProperties();
+}
+classFunction();
+
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////
 // Typescript
 
+///////////////////////////////////////////////////////////////
 // Callback Function (ES6)
 // Promise(ES7)
 // asyc-await(ES8)
