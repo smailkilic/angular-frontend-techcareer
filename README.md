@@ -1,9 +1,7 @@
 Script
-<hr>
 npm run start npm run nodemon npm run nodemon_q
 
 Npm Komutları
-<hr>
 node -v
 npm  -v
 
@@ -57,9 +55,7 @@ npm unistall express
 npm update # Bütün bağımlılıkları güncellemek
 npm update express 
 
-
 Nodemon
-<hr>
 node template.js
 node template
 npm install
