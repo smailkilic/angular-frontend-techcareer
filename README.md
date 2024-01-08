@@ -1,7 +1,10 @@
-Script
-npm run start npm run nodemon npm run nodemon_q
+## Script
+npm run start
+npm run nodemon
+npm run nodemon_q
 
-Npm Komutları
+## Npm Komutları 
+```sh
 node -v
 npm  -v
 
@@ -54,8 +57,11 @@ npm unistall express
 # UPDATE
 npm update # Bütün bağımlılıkları güncellemek
 npm update express 
+```
 
-Nodemon
+
+## Nodemon 
+```sh
 node template.js
 node template
 npm install
@@ -71,3 +77,4 @@ npm install -g nodemon --save
 
 npm run nodemon
 npm run nodemon_q
+```
